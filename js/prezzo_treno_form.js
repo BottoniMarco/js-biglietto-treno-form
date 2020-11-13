@@ -10,39 +10,61 @@
 
 
 
-// numero di chilometri che vuole percorrere
-var distanza = document.getElementById('kilometri');
-console.log(parseInt("i Km sono ", distanza));
 
-// età del passeggero.
-var eta = document.getElementsByClassName('eta');
-console.log(eta);
 
 var generaBtn = document.getElementById('genera');
 
-generaBtn.addEventListener("click" ,
+generaBtn.addEventListener("click",
   function () {
+    console.log("hai click su uno genera");
+
+    // numero di chilometri che vuole percorrere
+    var distanza = document.getElementById('kilometri');
+    console.log(parseInt(distanza.value));
+
+    var distanzaN = parseInt(distanza.value);
+    // età del passeggero.
+    var eta = document.getElementById('eta').value;
+    console.log(eta);
+
+    var scontoEta = "biglietto standard";
+
     if ( eta == "anziano") {
-      var prezzo = (distanza * 0.21) - ((distanza * 0.21) * 0.4 );
+      var prezzo = (distanzaN * 0.21) - ((distanzaN * 0.21) * 0.4 );
       document.getElementById('prezzoBiglietto').innerHTML = prezzo.toFixed(2) + "€";
       console.log(parseInt(prezzo));
+      scontoEta = "sconto silver";
     }
 
     // prezzo scontato minorenni
     else if (eta == "minorenne") {
-      var prezzo = (distanza * 0.21) - ((distanza * 0.21) * 0.2);
+      var prezzo = (distanzaN * 0.21) - ((distanzaN * 0.21) * 0.2);
       document.getElementById('prezzoBiglietto').innerHTML = prezzo.toFixed(2) + "€";
       console.log(parseInt(prezzo));
+      scontoEta = "sconto minorenni";
     }
+
     // prezzo pieno
-    // else (eta == "maggiorenne") {
-    //   var prezzo = (distanza * 0.21);
-    //   cument.getElementById('prezzoBiglietto').innerHTML prezzo.toFixed(2) + "€";
-    //   console.log(parseInt(prezzo));
-    //  }
+    else {
+       var prezzo = (distanzaN * 0.21);
+       document.getElementById('prezzoBiglietto').innerHTML = prezzo.toFixed(2) + "€";
+       console.log(parseInt(prezzo));
+     }
+
+
+     var nomeUtente = document.getElementById('nome').value;
+     document.getElementById('passeggero').innerHTML = nomeUtente;
+     console.log(nomeUtente)
+
+     document.getElementById('offerta').innerHTML = scontoEta;
+
+     var numeroCarrozza = Math.floor(Math.random() *9)+1;
+     document.getElementById('carrozza').innerHTML = numeroCarrozza;
+
+     var codiceTreno = Math.floor(Math.random() *10000)+90000;
+     document.getElementById('codice').innerHTML = codiceTreno;
   }
 );
-
 
 //
 // // distanza negativa
