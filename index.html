@@ -3,7 +3,7 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>prezzo_treno</title>
   </head>
   <body>
@@ -22,15 +22,16 @@
     <button type="button" name="button" id="annulla">annulla</button>
 
 
+    <div id="box-biglietto" class="hidden">
+      nome: <h3 id="passeggero"></h3>
+      offerta: <h3 id="offerta"></h3>
+      carrozza: <h3 id="carrozza"></h3>
+      codice CP: <h3 id="codice"></h3>
+      <p>
+        il prezzo è : <strong id="prezzoBiglietto"></strong>
+      </p>
+    </div>
 
-
-    nome: <h3 id="passeggero"></h3>
-    offerta: <h3 id="offerta"></h3>
-    carrozza: <h3 id="carrozza"></h3>
-    codice CP: <h3 id="codice"></h3>
-    <p>
-      il prezzo è : <strong id="prezzoBiglietto"></strong>
-    </p>
     <script src="js/prezzo_treno_form.js" charset="utf-8"></script>
   </body>
 </html>

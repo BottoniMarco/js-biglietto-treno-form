@@ -63,8 +63,40 @@ generaBtn.addEventListener("click",
 
      var codiceTreno = Math.floor(Math.random() *10000)+90000;
      document.getElementById('codice').innerHTML = codiceTreno;
+
+     var biglietto = document.getElementById('box-biglietto');
+
+     biglietto.classList.remove("hidden");
+     biglietto.classList.add("show");
   }
 );
+
+var anullaBtn = document.getElementById('annulla');
+
+anullaBtn.addEventListener("click",
+  function() {
+
+    console.log("hai click su uno annulla")
+
+    var biglietto = document.getElementById('box-biglietto');
+
+    biglietto.classList.remove("show");
+    biglietto.classList.add("hidden");
+
+    document.getElementById('nome').value = "";
+    document.getElementById('kilometri').value = "";
+    document.getElementById('eta').value = "";
+
+    document.getElementById('passeggero').innerHTML = "";
+    document.getElementById('offerta').innerHTML = "";
+    document.getElementById('carrozza').innerHTML = "";
+    document.getElementById('codice').innerHTML = "";
+    document.getElementById('prezzoBiglietto').innerHTML = "";
+
+  }
+);
+
+
 
 //
 // // distanza negativa
